@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content="Youthquaker">
+  <meta name="author" content="Youthquaker">
+  <meta property="og:title" content="Youthquaker">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="http://youthquaker.co.uk/">
+  <meta property="og:site_name" content="Youthquaker">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<title>DOG FOOD FOR PEOPLE</title>
+
+	<style>
+		* {
+			margin:0;
+			padding:0;
+			outline:0;
+			
+		}
+		html {
+			height:100%;
+			overflow:hidden;
+			font-family:"Architects Daughter", monospace;
+			font-weight:normal;
+			text-transform:uppercase;
+			font-size:12px;
+			
+		}
+		body {
+			background:url(https://s3.amazonaws.com/luckyplop/04f82433c1712236b86a9d64aaa9add2f8698f7d.jpg) center no-repeat;
+			background-size:50%;
+		}
+
+		
+		#rapper {
+			position:absolute;
+			width:100%;
+			height:100%;
+			display:table;
+			text-align:center;
+		}
+		
+		header, footer {
+			text-align:center;
+			position:absolute;
+			width:100%;
+			font-size:30px;
+			color:red;
+		}
+		footer {
+			bottom:30px;
+		}
+		
+		header {
+			top:30px;
+		}
+
+
+		input[type="text"]{
+			text-align: center;
+			width: 190px;
+			border:2px dashed #ccc;
+			padding: 10px;
+			font-size:15px;
+			background:#39b6ee;
+			color:white;
+			border-radius:20px;
+			box-shadow:2px 2px 5px #ccc;
+			font-family:"Architects Daughter", monospace;
+		}
+		input[type="text"]::-webkit-input-placeholder  {
+			font-family:"Architects Daughter", monospace;
+			color:white;
+			font-size:15px;
+		}
+		.required-message {
+			display:none;
+		}
+    div#fields-rapper {
+      position: relative;
+			margin:0;
+    }
+    #fields-rapper.thanks #fields {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #fields-rapper #thanks {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 50px;
+      -webkit-transition: opacity 0.5s linear;
+      -moz-transition: opacity 0.5s linear;
+      transition: opacity 0.5s linear;
+    }
+    #fields-rapper.thanks #thanks {
+      opacity: 1;
+    }
+
+		#start {
+			display:none;
+		}
+
+	</style>
+
+</head>
+<header>
+	Coming 2015!
+</header>
+
+<footer>
+  <div id="fields-rapper">
+  	<div id="fields">
+	<form>
+    	<input id="so1" type="text" placeholder="enter email for updates!"></input><br>
+    	<div class="error-message" id="1478134303_errorMessage"></div>
+    	<div class="required-message">This is a required question</div>
+			<div><input type="submit" id="start" value="Submit"></div>
+    </div>
+    <div id="thanks">thanks</div>
+		</form>
+  </div>
+</footer>
+
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="prefixfree.min.js"></script>
+<script>
+$(function(){
+	var is_iphone = (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)),
+			is_ipad = (navigator.userAgent.match(/iPad/i)),
+			is_android = (navigator.userAgent.match(/Android/i)),
+			is_mobile = is_iphone || is_ipad || is_android;
+	$("html").addClass(is_mobile ? "mobile" : "desktop");
+	
+	$("form").submit(function(e){
+		e.preventDefault()
+		var so1 = $("#so1").val()
+		
+		var data = {}
+		data['entry.981699518'] = so1
+		data['submit'] = "Submit"
+		$.ajax({
+      url: "https://docs.google.com/forms/d/1zD8PcTyVADrzJBROulzY_R5UbBz-hKAkw_0E09E4EsY/formResponse",
+      dataType: 'jsonp',
+      data: data,
+    })
+    $("#fields-rapper").addClass("thanks")
+  });  });
+
+
+
+
+</script>
+</html>
